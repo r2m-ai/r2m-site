@@ -124,7 +124,7 @@ export default function Home() {
               Our team
             </p>
             <h2 className="mx-auto mt-6 max-w-[30ch] text-balance text-[clamp(22px,3vw,32px)] font-semibold tracking-tight">
-              Built by researchers and engineers from
+              Built by researchers, engineers, traders from
             </h2>
           </Reveal>
           <Reveal className="[transition-delay:150ms]">
