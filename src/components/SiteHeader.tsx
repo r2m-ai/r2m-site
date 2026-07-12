@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function SiteHeader() {
@@ -7,8 +8,15 @@ export function SiteHeader() {
         aria-label="Main"
         className="mx-auto flex h-16 max-w-[1100px] items-center justify-between px-6 text-[14px]"
       >
-        <Link href="/" className="font-semibold tracking-tight text-ink no-underline">
-          r2m<span className="grad-text">.ai</span>
+        <Link href="/" className="inline-flex items-center no-underline">
+          <Image
+            src="/nav-mark.png"
+            alt="r2m.ai"
+            width={86}
+            height={28}
+            unoptimized
+            className="h-7 w-auto"
+          />
         </Link>
         <div className="flex items-center gap-8">
           <Link
