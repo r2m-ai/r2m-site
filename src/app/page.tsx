@@ -28,19 +28,22 @@ const pillars = [
 ];
 
 const companies = [
-  { name: "Google", src: "/logos/google.svg", h: "h-7" },
-  { name: "Meta", src: "/logos/meta.svg", h: "h-6" },
-  { name: "Google DeepMind", src: "/logos/deepmind.svg", h: "h-6" },
-  { name: "TikTok", src: "/logos/tiktok.svg", h: "h-7" },
-  { name: "Morgan Stanley", src: "/logos/morganstanley.svg", h: "h-5" },
+  { name: "Google", src: "/logos/google.svg", h: "h-[26px]" },
+  { name: "Meta", src: "/logos/meta.svg", h: "h-[21px]" },
+  { name: "Google DeepMind", src: "/logos/deepmind.svg", h: "h-[19px]" },
+  { name: "TikTok", src: "/logos/tiktok.svg", h: "h-[22px]" },
+  { name: "Morgan Stanley", src: "/logos/morganstanley.svg", h: "h-[24px]" },
+  { name: "Two Sigma", src: "/logos/twosigma.svg", h: "h-[20px]" },
+  { name: "Citadel", src: "/logos/citadel.svg", h: "h-[17px]" },
 ];
 
 const universities = [
-  { name: "Carnegie Mellon University", src: "/logos/cmu.svg", h: "h-5" },
-  { name: "Cornell University", src: "/logos/cornell.svg", h: "h-9" },
-  { name: "Stanford University", src: "/logos/stanford.svg", h: "h-6" },
-  { name: "University of Waterloo", src: "/logos/waterloo.svg", h: "h-8" },
-  { name: "Georgia Tech", src: "/logos/gatech.svg", h: "h-7" },
+  { name: "Harvard University", src: "/logos/harvard.svg", h: "h-[22px]" },
+  { name: "Carnegie Mellon University", src: "/logos/cmu.svg", h: "h-[17px]" },
+  { name: "Cornell University", src: "/logos/cornell.svg", h: "h-[18px]" },
+  { name: "Stanford University", src: "/logos/stanford.svg", h: "h-[21px]" },
+  { name: "University of Waterloo", src: "/logos/waterloo.svg", h: "h-[21px]" },
+  { name: "Georgia Tech", src: "/logos/gatech.svg", h: "h-[22px]" },
 ];
 
 export default function Home() {
@@ -134,7 +137,7 @@ export default function Home() {
                   width={140}
                   height={32}
                   unoptimized
-                  className={`${c.h} w-auto opacity-40 grayscale [filter:brightness(0)_invert(0.9)] transition-opacity duration-300 hover:opacity-80`}
+                  className={`${c.h} logo-dim w-auto`}
                 />
               ))}
             </div>
@@ -147,7 +150,7 @@ export default function Home() {
                   width={140}
                   height={32}
                   unoptimized
-                  className={`${c.h} w-auto opacity-40 grayscale [filter:brightness(0)_invert(0.9)] transition-opacity duration-300 hover:opacity-80`}
+                  className={`${c.h} logo-dim w-auto`}
                 />
               ))}
             </div>

@@ -93,6 +93,19 @@ button:focus-visible {
   box-shadow: 0 0 42px -14px rgba(110, 120, 255, 0.35);
 }
 
+/* team logo wall: unify every mark into a dim steel-blue tone */
+.logo-dim {
+  filter: brightness(0) invert(0.52) sepia(0.32) hue-rotate(182deg)
+    saturate(1.1) brightness(0.92);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+.logo-dim:hover {
+  opacity: 0.95;
+  filter: brightness(0) invert(0.7) sepia(0.3) hue-rotate(182deg)
+    saturate(1.2);
+}
+
 /* staged page-load reveal */
 .rise {
   opacity: 0;
