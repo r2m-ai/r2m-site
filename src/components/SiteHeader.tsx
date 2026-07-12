@@ -20,6 +20,12 @@ export function SiteHeader() {
         </Link>
         <div className="flex items-center gap-8">
           <Link
+            href="/research"
+            className="text-muted no-underline transition-colors hover:text-ink"
+          >
+            Research
+          </Link>
+          <Link
             href="/about"
             className="text-muted no-underline transition-colors hover:text-ink"
           >
