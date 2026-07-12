@@ -35,6 +35,19 @@ body {
   overflow-x: hidden;
 }
 
+/* ambient brand glow behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(52% 38% at 50% -6%, rgba(91, 140, 255, 0.14), transparent 70%),
+    radial-gradient(40% 32% at 82% 22%, rgba(143, 92, 255, 0.1), transparent 70%),
+    radial-gradient(44% 36% at 12% 68%, rgba(91, 140, 255, 0.06), transparent 70%);
+}
+
 ::selection {
   background: var(--accent);
   color: var(--bg);
@@ -47,16 +60,49 @@ button:focus-visible {
   border-radius: 2px;
 }
 
+/* gradient text for key phrases */
+.grad-text {
+  background: linear-gradient(92deg, #6fa0ff 0%, #8f5cff 55%, #b98aff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* gradient primary button */
+.btn-grad {
+  background: linear-gradient(92deg, #4d82ff, #8f5cff);
+  color: #fff;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+.btn-grad:hover {
+  filter: brightness(1.15) saturate(1.05);
+  transform: translateY(-1px);
+}
+
+/* glass card with glow-on-hover border */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--line-soft);
+  transition: border-color 0.3s ease, background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.card:hover {
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(122, 130, 255, 0.35);
+  box-shadow: 0 0 42px -14px rgba(110, 120, 255, 0.35);
+}
+
 /* staged page-load reveal */
 .rise {
   opacity: 0;
-  transform: translateY(14px);
-  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+  transform: translateY(16px);
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
 }
-.rise-1 { animation-delay: 0.15s; }
-.rise-2 { animation-delay: 0.3s; }
-.rise-3 { animation-delay: 0.45s; }
-.rise-4 { animation-delay: 0.6s; }
+.rise-1 { animation-delay: 0.1s; }
+.rise-2 { animation-delay: 0.25s; }
+.rise-3 { animation-delay: 0.4s; }
+.rise-4 { animation-delay: 0.55s; }
 
 @keyframes rise {
   to {
@@ -65,10 +111,27 @@ button:focus-visible {
   }
 }
 
+/* scroll-triggered reveal (toggled by the Reveal component) */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .rise {
+  .rise,
+  .reveal {
     animation: none;
+    transition: none;
     opacity: 1;
+    transform: none;
+  }
+  .btn-grad:hover {
     transform: none;
   }
 }

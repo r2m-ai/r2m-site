@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: "%s — r2m.ai",
   },
   description:
-    "R2M is an independent research and product lab exploring long-horizon agents, memory systems, autonomous research, and reliable behavioral control.",
+    "r2m.ai is an independent research and product lab exploring long-horizon agents, memory systems, autonomous research, and reliable behavioral control.",
   openGraph: {
     title: "r2m.ai — long-horizon AI systems",
     description:

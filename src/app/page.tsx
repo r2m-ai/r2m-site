@@ -1,5 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "../../public/logo.png";
+import { HeroField } from "@/components/HeroField";
+import { Reveal } from "@/components/Reveal";
 
 const pillars = [
   {
@@ -24,94 +27,162 @@ const pillars = [
   },
 ];
 
+const companies = [
+  { name: "Google", src: "/logos/google.svg", h: "h-7" },
+  { name: "Meta", src: "/logos/meta.svg", h: "h-6" },
+  { name: "Google DeepMind", src: "/logos/deepmind.svg", h: "h-6" },
+  { name: "TikTok", src: "/logos/tiktok.svg", h: "h-7" },
+  { name: "Morgan Stanley", src: "/logos/morganstanley.svg", h: "h-5" },
+];
+
+const universities = [
+  { name: "Carnegie Mellon University", src: "/logos/cmu.svg", h: "h-5" },
+  { name: "Cornell University", src: "/logos/cornell.svg", h: "h-9" },
+  { name: "Stanford University", src: "/logos/stanford.svg", h: "h-6" },
+  { name: "University of Waterloo", src: "/logos/waterloo.svg", h: "h-8" },
+  { name: "Georgia Tech", src: "/logos/gatech.svg", h: "h-7" },
+];
+
 export default function Home() {
   return (
     <>
-      <section className="mx-auto max-w-[1060px] px-6 pb-22 pt-10 sm:pt-16">
-        <div className="rise rise-1 mb-10 sm:mb-14">
-          <Image
-            src={logo}
-            alt="R2M — Reason · Memory · Improve"
-            priority
-            className="h-auto w-full max-w-[620px]"
-          />
-        </div>
-
-        <h1 className="rise rise-2 max-w-[24ch] text-balance text-[clamp(28px,4.6vw,48px)] font-semibold leading-[1.14] tracking-tight">
-          Long-horizon AI systems that reason, remember, reflect, and improve
-          over time.
-        </h1>
-        <p className="rise rise-3 mt-6 max-w-[52ch] text-[clamp(16px,2vw,19px)] leading-relaxed text-muted">
-          R2M is an independent research and product lab exploring long-horizon
-          agents, memory systems, autonomous research, and reliable behavioral
-          control.
-        </p>
-        <div className="rise rise-4 mt-9 flex flex-wrap items-center gap-3.5">
-          <a
-            href="mailto:contact@r2m.ai"
-            className="inline-flex items-center gap-2.5 border border-accent bg-accent px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-accent"
-          >
-            contact@r2m.ai →
-          </a>
-          <a
-            href="https://github.com/r2m-ai"
-            rel="noopener"
-            className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-accent hover:text-accent"
-          >
-            follow on github
-          </a>
+      {/* hero */}
+      <section className="relative overflow-hidden">
+        <HeroField />
+        <div className="relative mx-auto flex max-w-[1100px] flex-col items-center px-6 pb-28 pt-20 text-center sm:pt-28">
+          <div className="rise rise-1 w-full max-w-[640px]">
+            <Image
+              src={logo}
+              alt="r2m.ai — Reason · Memory · Improve"
+              priority
+              className="h-auto w-full [transform:scaleX(1.12)]"
+            />
+          </div>
+          <h1 className="rise rise-2 mt-14 max-w-[26ch] text-balance text-[clamp(28px,4.4vw,50px)] font-semibold leading-[1.14] tracking-tight">
+            Long-horizon AI systems that{" "}
+            <span className="grad-text">reason, remember, reflect,</span> and
+            improve over time.
+          </h1>
+          <p className="rise rise-3 mt-7 max-w-[58ch] text-balance text-[clamp(16px,2vw,19px)] leading-relaxed text-muted">
+            r2m.ai is an independent research and product lab exploring
+            long-horizon agents, memory systems, autonomous research, and
+            reliable behavioral control.
+          </p>
+          <div className="rise rise-4 mt-11 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="mailto:contact@r2m.ai"
+              className="btn-grad inline-flex items-center gap-2.5 px-7 py-3.5 text-[15px] font-medium no-underline"
+            >
+              contact@r2m.ai →
+            </a>
+            <Link
+              href="/careers"
+              className="inline-flex items-center gap-2.5 border border-line px-7 py-3.5 text-[15px] font-medium text-ink no-underline transition-colors hover:border-accent hover:text-accent"
+            >
+              build with us
+            </Link>
+          </div>
         </div>
       </section>
 
-      <section className="border-t border-line-soft py-18">
-        <div className="mx-auto max-w-[1060px] px-6">
-          <p className="mb-10 font-mono text-xs uppercase tracking-[0.22em] text-muted">
-            What we&apos;re exploring
-          </p>
-          <div className="grid grid-cols-1 gap-px border border-line-soft bg-line-soft sm:grid-cols-2">
-            {pillars.map((p) => (
-              <div
-                key={p.tag}
-                className="bg-bg p-7 pb-9 transition-colors hover:bg-raised"
-              >
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
-                  {p.tag}
-                </p>
-                <h2 className="mb-2.5 mt-3.5 text-xl font-semibold tracking-tight">
-                  {p.title}
-                </h2>
-                <p className="text-[15px] leading-relaxed text-muted">
-                  {p.body}
-                </p>
-              </div>
+      {/* pillars */}
+      <section className="border-t border-line-soft py-24">
+        <div className="mx-auto max-w-[1100px] px-6">
+          <Reveal>
+            <p className="mb-12 text-center text-xs font-medium uppercase tracking-[0.3em] text-muted">
+              What we&apos;re exploring
+            </p>
+          </Reveal>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {pillars.map((p, i) => (
+              <Reveal key={p.tag} className={i % 2 ? "sm:[transition-delay:120ms]" : ""}>
+                <div className="card h-full p-8 pb-10">
+                  <p className="text-xs font-medium uppercase tracking-[0.18em] text-accent">
+                    {p.tag}
+                  </p>
+                  <h2 className="mb-3 mt-4 text-xl font-semibold tracking-tight">
+                    {p.title}
+                  </h2>
+                  <p className="text-[15px] leading-relaxed text-muted">
+                    {p.body}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-t border-line-soft py-22">
-        <div className="mx-auto max-w-[1060px] px-6">
-          <h2 className="max-w-[22ch] text-balance text-[clamp(24px,3.4vw,36px)] font-semibold tracking-tight">
-            Working on long-horizon AI?
-          </h2>
-          <p className="mt-3.5 max-w-[48ch] text-muted">
-            We&apos;d like to hear from you — research collaborations, early
-            access, or just a good conversation about agents that last.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center gap-3.5">
-            <a
-              href="mailto:contact@r2m.ai"
-              className="inline-flex items-center gap-2.5 border border-accent bg-accent px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-accent"
-            >
-              get in touch →
-            </a>
-            <a
-              href="mailto:careers@r2m.ai"
-              className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-accent hover:text-accent"
-            >
-              we&apos;re hiring →
-            </a>
-          </div>
+      {/* team */}
+      <section className="border-t border-line-soft py-24">
+        <div className="mx-auto max-w-[1100px] px-6 text-center">
+          <Reveal>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
+              Our team
+            </p>
+            <h2 className="mx-auto mt-6 max-w-[30ch] text-balance text-[clamp(22px,3vw,32px)] font-semibold tracking-tight">
+              Built by researchers and engineers from
+            </h2>
+          </Reveal>
+          <Reveal className="[transition-delay:150ms]">
+            <div className="mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+              {companies.map((c) => (
+                <Image
+                  key={c.name}
+                  src={c.src}
+                  alt={c.name}
+                  width={140}
+                  height={32}
+                  unoptimized
+                  className={`${c.h} w-auto opacity-40 grayscale [filter:brightness(0)_invert(0.9)] transition-opacity duration-300 hover:opacity-80`}
+                />
+              ))}
+            </div>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+              {universities.map((c) => (
+                <Image
+                  key={c.name}
+                  src={c.src}
+                  alt={c.name}
+                  width={140}
+                  height={32}
+                  unoptimized
+                  className={`${c.h} w-auto opacity-40 grayscale [filter:brightness(0)_invert(0.9)] transition-opacity duration-300 hover:opacity-80`}
+                />
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* build with us */}
+      <section className="border-t border-line-soft py-28">
+        <div className="mx-auto max-w-[1100px] px-6 text-center">
+          <Reveal>
+            <h2 className="mx-auto max-w-[24ch] text-balance text-[clamp(26px,3.6vw,40px)] font-semibold tracking-tight">
+              The most interesting problems in AI are{" "}
+              <span className="grad-text">just beginning.</span>
+            </h2>
+            <p className="mx-auto mt-6 max-w-[52ch] text-balance leading-relaxed text-muted">
+              We&apos;re a small team working on agents that last — and
+              we&apos;re looking for people who want to build them with us.
+            </p>
+            <div className="mt-11 flex flex-wrap items-center justify-center gap-4">
+              <Link
+                href="/careers"
+                className="btn-grad inline-flex items-center gap-2.5 px-7 py-3.5 text-[15px] font-medium no-underline"
+              >
+                build with us →
+              </Link>
+              <a
+                href="https://github.com/r2m-ai"
+                rel="noopener"
+                className="inline-flex items-center gap-2.5 border border-line px-7 py-3.5 text-[15px] font-medium text-ink no-underline transition-colors hover:border-accent hover:text-accent"
+              >
+                follow on github
+              </a>
+            </div>
+          </Reveal>
         </div>
       </section>
     </>
