@@ -128,10 +128,7 @@ export default function Home() {
             </h2>
           </Reveal>
           <Reveal className="[transition-delay:150ms]">
-            <p className="mt-14 text-[11px] font-medium uppercase tracking-[0.24em] text-muted/60">
-              Industry
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+            <div className="mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
               {companies.map((c) => (
                 <Image
                   key={c.name}
@@ -144,10 +141,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            <p className="mt-12 text-[11px] font-medium uppercase tracking-[0.24em] text-muted/60">
-              Academia
-            </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
               {universities.map((c) => (
                 <Image
                   key={c.name}
