@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0e0d0b;
+  --bg-raised: #151310;
+  --line: rgba(240, 237, 230, 0.1);
+  --line-soft: rgba(240, 237, 230, 0.06);
+  --ink: #f0ede6;
+  --muted: #a69e8f;
+  --copper: #e2a14e;
+  --copper-dim: #8a6534;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-raised: var(--bg-raised);
+  --color-line: var(--line);
+  --color-line-soft: var(--line-soft);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-copper: var(--copper);
+  --color-copper-dim: var(--copper-dim);
+  --font-sans: var(--font-geist-sans), "Avenir Next", "Helvetica Neue",
+    Helvetica, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo,
+    Consolas, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--copper);
+  color: var(--bg);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* staged page-load reveal */
+.rise {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.rise-1 { animation-delay: 0.15s; }
+.rise-2 { animation-delay: 0.3s; }
+.rise-3 { animation-delay: 0.45s; }
+.rise-4 { animation-delay: 0.6s; }
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
