@@ -28,9 +28,9 @@ const pillars = [
 ];
 
 const companies = [
+  { name: "Google DeepMind", src: "/logos/deepmind.svg", h: "h-[23px]" },
   { name: "Google", src: "/logos/google.svg", h: "h-[26px]" },
   { name: "Meta", src: "/logos/meta.svg", h: "h-[21px]" },
-  { name: "Google DeepMind", src: "/logos/deepmind.svg", h: "h-[19px]" },
   { name: "TikTok", src: "/logos/tiktok.svg", h: "h-[22px]" },
   { name: "Morgan Stanley", src: "/logos/morganstanley.svg", h: "h-[24px]" },
   { name: "Two Sigma", src: "/logos/twosigma.svg", h: "h-[20px]" },
