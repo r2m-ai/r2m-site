@@ -25,7 +25,13 @@ export function SiteHeader() {
             github
           </a>
           <a
-            href="mailto:hello@r2m.ai"
+            href="mailto:careers@r2m.ai"
+            className="text-muted transition-colors hover:text-copper"
+          >
+            careers
+          </a>
+          <a
+            href="mailto:contact@r2m.ai"
             className="text-muted transition-colors hover:text-copper"
           >
             contact

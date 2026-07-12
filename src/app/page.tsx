@@ -45,10 +45,10 @@ export default function Home() {
         </p>
         <div className="rise rise-4 mt-9 flex flex-wrap items-center gap-3.5">
           <a
-            href="mailto:hello@r2m.ai"
+            href="mailto:contact@r2m.ai"
             className="inline-flex items-center gap-2.5 border border-copper bg-copper px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-copper"
           >
-            hello@r2m.ai →
+            contact@r2m.ai →
           </a>
           <a
             href="https://github.com/r2m-ai"
@@ -95,12 +95,18 @@ export default function Home() {
             We&apos;d like to hear from you — research collaborations, early
             access, or just a good conversation about agents that last.
           </p>
-          <div className="mt-9">
+          <div className="mt-9 flex flex-wrap items-center gap-3.5">
             <a
-              href="mailto:hello@r2m.ai"
+              href="mailto:contact@r2m.ai"
               className="inline-flex items-center gap-2.5 border border-copper bg-copper px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-copper"
             >
               get in touch →
+            </a>
+            <a
+              href="mailto:careers@r2m.ai"
+              className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-copper hover:text-copper"
+            >
+              we&apos;re hiring →
             </a>
           </div>
         </div>

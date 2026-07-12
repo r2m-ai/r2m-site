@@ -13,10 +13,17 @@ export function SiteFooter() {
           </a>
           {" · "}
           <a
-            href="mailto:hello@r2m.ai"
+            href="mailto:contact@r2m.ai"
             className="no-underline transition-colors hover:text-copper"
           >
-            hello@r2m.ai
+            contact@r2m.ai
+          </a>
+          {" · "}
+          <a
+            href="mailto:careers@r2m.ai"
+            className="no-underline transition-colors hover:text-copper"
+          >
+            careers@r2m.ai
           </a>
         </span>
       </div>
