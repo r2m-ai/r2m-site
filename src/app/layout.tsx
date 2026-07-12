@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     url: "https://r2m.ai",
     siteName: "r2m.ai",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
   },
 };
 

@@ -26,10 +26,14 @@ src/
     page.tsx          # landing page
     about/page.mdx    # MDX content page
     layout.tsx        # shared shell, metadata, fonts
-    globals.css       # design tokens (copper-on-charcoal palette)
+    globals.css       # design tokens (brand blue-violet on near-black)
+    icon.png          # favicon (R2M mark)
   components/
-    DotMark.tsx       # canvas dot-matrix wordmark
     SiteHeader.tsx
     SiteFooter.tsx
   mdx-components.tsx  # global MDX element styles
+public/
+  logo.png            # full logo (transparent background)
+  logo-mark.png       # mark only, no tagline
+  og.png              # 1200x630 social share card
 ```

@@ -1,4 +1,5 @@
-import { DotMark } from "@/components/DotMark";
+import Image from "next/image";
+import logo from "../../public/logo.png";
 
 const pillars = [
   {
@@ -27,13 +28,15 @@ export default function Home() {
   return (
     <>
       <section className="mx-auto max-w-[1060px] px-6 pb-22 pt-10 sm:pt-16">
-        <div className="mb-9 sm:mb-12">
-          <DotMark />
+        <div className="rise rise-1 mb-10 sm:mb-14">
+          <Image
+            src={logo}
+            alt="R2M — Reason · Memory · Improve"
+            priority
+            className="h-auto w-full max-w-[620px]"
+          />
         </div>
 
-        <p className="rise rise-1 mb-5 font-mono text-xs uppercase tracking-[0.22em] text-copper">
-          Reason&ensp;·&ensp;Remember&ensp;·&ensp;Reflect&ensp;·&ensp;Improve
-        </p>
         <h1 className="rise rise-2 max-w-[24ch] text-balance text-[clamp(28px,4.6vw,48px)] font-semibold leading-[1.14] tracking-tight">
           Long-horizon AI systems that reason, remember, reflect, and improve
           over time.
@@ -46,14 +49,14 @@ export default function Home() {
         <div className="rise rise-4 mt-9 flex flex-wrap items-center gap-3.5">
           <a
             href="mailto:contact@r2m.ai"
-            className="inline-flex items-center gap-2.5 border border-copper bg-copper px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-copper"
+            className="inline-flex items-center gap-2.5 border border-accent bg-accent px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-accent"
           >
             contact@r2m.ai →
           </a>
           <a
             href="https://github.com/r2m-ai"
             rel="noopener"
-            className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-copper hover:text-copper"
+            className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-accent hover:text-accent"
           >
             follow on github
           </a>
@@ -71,7 +74,7 @@ export default function Home() {
                 key={p.tag}
                 className="bg-bg p-7 pb-9 transition-colors hover:bg-raised"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.14em] text-copper">
+                <p className="font-mono text-xs uppercase tracking-[0.14em] text-accent">
                   {p.tag}
                 </p>
                 <h2 className="mb-2.5 mt-3.5 text-xl font-semibold tracking-tight">
@@ -98,13 +101,13 @@ export default function Home() {
           <div className="mt-9 flex flex-wrap items-center gap-3.5">
             <a
               href="mailto:contact@r2m.ai"
-              className="inline-flex items-center gap-2.5 border border-copper bg-copper px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-copper"
+              className="inline-flex items-center gap-2.5 border border-accent bg-accent px-5.5 py-3 font-mono text-sm text-bg no-underline transition-colors hover:bg-transparent hover:text-accent"
             >
               get in touch →
             </a>
             <a
               href="mailto:careers@r2m.ai"
-              className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-copper hover:text-copper"
+              className="inline-flex items-center gap-2.5 border border-line px-5.5 py-3 font-mono text-sm text-ink no-underline transition-colors hover:border-accent hover:text-accent"
             >
               we&apos;re hiring →
             </a>

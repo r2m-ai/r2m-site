@@ -19,7 +19,7 @@ const components: MDXComponents = {
   ),
   a: (props) => (
     <a
-      className="border-b border-copper-dim text-copper no-underline transition-colors hover:border-copper"
+      className="border-b border-accent-dim text-accent no-underline transition-colors hover:border-accent"
       {...props}
     />
   ),

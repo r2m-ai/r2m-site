@@ -7,21 +7,21 @@ export function SiteFooter() {
           <a
             href="https://github.com/r2m-ai"
             rel="noopener"
-            className="no-underline transition-colors hover:text-copper"
+            className="no-underline transition-colors hover:text-accent"
           >
             github
           </a>
           {" · "}
           <a
             href="mailto:contact@r2m.ai"
-            className="no-underline transition-colors hover:text-copper"
+            className="no-underline transition-colors hover:text-accent"
           >
             contact@r2m.ai
           </a>
           {" · "}
           <a
             href="mailto:careers@r2m.ai"
-            className="no-underline transition-colors hover:text-copper"
+            className="no-underline transition-colors hover:text-accent"
           >
             careers@r2m.ai
           </a>

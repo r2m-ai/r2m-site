@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0e0d0b;
-  --bg-raised: #151310;
-  --line: rgba(240, 237, 230, 0.1);
-  --line-soft: rgba(240, 237, 230, 0.06);
-  --ink: #f0ede6;
-  --muted: #a69e8f;
-  --copper: #e2a14e;
-  --copper-dim: #8a6534;
+  --bg: #060609;
+  --bg-raised: #0e0e15;
+  --line: rgba(235, 238, 250, 0.1);
+  --line-soft: rgba(235, 238, 250, 0.06);
+  --ink: #edeff7;
+  --muted: #9ba1b5;
+  --accent: #5b8cff;
+  --accent-2: #8f5cff;
+  --accent-dim: #37418f;
 }
 
 @theme inline {
@@ -18,8 +19,9 @@
   --color-line-soft: var(--line-soft);
   --color-ink: var(--ink);
   --color-muted: var(--muted);
-  --color-copper: var(--copper);
-  --color-copper-dim: var(--copper-dim);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-dim: var(--accent-dim);
   --font-sans: var(--font-geist-sans), "Avenir Next", "Helvetica Neue",
     Helvetica, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo,
@@ -34,13 +36,13 @@ body {
 }
 
 ::selection {
-  background: var(--copper);
+  background: var(--accent);
   color: var(--bg);
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--copper);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
   border-radius: 2px;
 }
