@@ -60,23 +60,36 @@ button:focus-visible {
   border-radius: 2px;
 }
 
-/* gradient text for key phrases */
+/* gradient text for key phrases — slow living shimmer */
 .grad-text {
-  background: linear-gradient(92deg, #6fa0ff 0%, #8f5cff 55%, #b98aff 100%);
+  background: linear-gradient(
+    92deg,
+    #6fa0ff 0%,
+    #8f5cff 40%,
+    #b98aff 60%,
+    #6fa0ff 100%
+  );
+  background-size: 220% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: grad-drift 9s ease-in-out infinite alternate;
+}
+@keyframes grad-drift {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
 }
 
 /* gradient primary button */
 .btn-grad {
   background: linear-gradient(92deg, #4d82ff, #8f5cff);
   color: #fff;
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.25s ease;
 }
 .btn-grad:hover {
-  filter: brightness(1.15) saturate(1.05);
+  filter: brightness(1.12) saturate(1.05);
   transform: translateY(-1px);
+  box-shadow: 0 6px 32px -8px rgba(110, 105, 255, 0.55);
 }
 
 /* glass card with glow-on-hover border */
@@ -85,12 +98,50 @@ button:focus-visible {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--line-soft);
   transition: border-color 0.3s ease, background 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease, transform 0.3s ease;
 }
 .card:hover {
   background: rgba(255, 255, 255, 0.035);
   border-color: rgba(122, 130, 255, 0.35);
   box-shadow: 0 0 42px -14px rgba(110, 120, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* nav links: gradient underline slides in */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(92deg, #5b8cff, #8f5cff);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* soft bloom behind the hero logo */
+.logo-bloom {
+  position: relative;
+}
+.logo-bloom::before {
+  content: "";
+  position: absolute;
+  inset: -22% -12%;
+  z-index: -1;
+  background: radial-gradient(
+    50% 55% at 50% 46%,
+    rgba(101, 110, 255, 0.16),
+    transparent 72%
+  );
+  filter: blur(6px);
 }
 
 /* team logo wall: unify every mark into a dim steel-blue tone */
@@ -144,7 +195,11 @@ button:focus-visible {
     opacity: 1;
     transform: none;
   }
-  .btn-grad:hover {
+  .grad-text {
+    animation: none;
+  }
+  .btn-grad:hover,
+  .card:hover {
     transform: none;
   }
 }

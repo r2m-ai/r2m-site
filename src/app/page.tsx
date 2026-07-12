@@ -53,7 +53,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <HeroField />
         <div className="relative mx-auto flex max-w-[1100px] flex-col items-center px-6 pb-28 pt-20 text-center sm:pt-28">
-          <div className="rise rise-1 w-full max-w-[640px]">
+          <div className="rise rise-1 logo-bloom w-full max-w-[640px]">
             <Image
               src={logo}
               alt="r2m.ai — Reason · Memory · Improve"
@@ -128,7 +128,10 @@ export default function Home() {
             </h2>
           </Reveal>
           <Reveal className="[transition-delay:150ms]">
-            <div className="mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+            <p className="mt-14 text-[11px] font-medium uppercase tracking-[0.24em] text-muted/60">
+              Industry
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
               {companies.map((c) => (
                 <Image
                   key={c.name}
@@ -141,7 +144,10 @@ export default function Home() {
                 />
               ))}
             </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+            <p className="mt-12 text-[11px] font-medium uppercase tracking-[0.24em] text-muted/60">
+              Academia
+            </p>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
               {universities.map((c) => (
                 <Image
                   key={c.name}

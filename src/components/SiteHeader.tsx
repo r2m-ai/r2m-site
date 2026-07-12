@@ -21,26 +21,26 @@ export function SiteHeader() {
         <div className="flex items-center gap-8">
           <Link
             href="/research"
-            className="text-muted no-underline transition-colors hover:text-ink"
+            className="nav-link text-muted no-underline transition-colors hover:text-ink"
           >
             Research
           </Link>
           <Link
             href="/about"
-            className="text-muted no-underline transition-colors hover:text-ink"
+            className="nav-link text-muted no-underline transition-colors hover:text-ink"
           >
             About
           </Link>
           <a
             href="https://github.com/r2m-ai"
             rel="noopener"
-            className="text-muted no-underline transition-colors hover:text-ink"
+            className="nav-link text-muted no-underline transition-colors hover:text-ink"
           >
             GitHub
           </a>
           <Link
             href="/careers"
-            className="text-muted no-underline transition-colors hover:text-ink"
+            className="nav-link text-muted no-underline transition-colors hover:text-ink"
           >
             Careers
           </Link>
