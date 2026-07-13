@@ -17,9 +17,9 @@ const posts = [
     date: "July 2026",
   },
   {
-    slug: "market-loop",
+    slug: "alpha-loop",
     tag: "Agents in markets",
-    title: "MarketLoop",
+    title: "AlphaLoop",
     dek: "A multi-agent trading system that fuses technical, macro, sentiment, and quantitative signals into one conviction score — then executes, verifies, and reports on itself daily.",
     date: "July 2026",
   },
