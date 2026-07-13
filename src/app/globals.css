@@ -157,6 +157,75 @@ button:focus-visible {
     saturate(1.2);
 }
 
+/* film-grain texture over everything, very faint */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* slow-drifting glow orbs */
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(100px);
+}
+.orb-a {
+  animation: orb-drift 18s ease-in-out infinite alternate;
+}
+.orb-b {
+  animation: orb-drift 24s ease-in-out infinite alternate-reverse;
+}
+@keyframes orb-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(40px, -30px, 0) scale(1.15); }
+}
+
+/* auto-scrolling marquee for the homepage research strip */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 7%,
+    black 93%,
+    transparent
+  );
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 36s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+/* pipeline poster: horizontal snap strip with edge fades */
+.poster-strip {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 12px;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-dim) transparent;
+}
+
 /* staged page-load reveal */
 .rise {
   opacity: 0;
@@ -201,5 +270,16 @@ button:focus-visible {
   .btn-grad:hover,
   .card:hover {
     transform: none;
+  }
+  .orb-a,
+  .orb-b {
+    animation: none;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+    mask-image: none;
   }
 }

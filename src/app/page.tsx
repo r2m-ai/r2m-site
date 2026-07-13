@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../public/logo.png";
 import { HeroField } from "@/components/HeroField";
+import { ResearchMarquee } from "@/components/ResearchMarquee";
 import { Reveal } from "@/components/Reveal";
 
 const pillars = [
@@ -52,6 +53,14 @@ export default function Home() {
       {/* hero */}
       <section className="relative overflow-hidden">
         <HeroField />
+        <div
+          aria-hidden="true"
+          className="orb orb-a -left-24 top-16 h-72 w-72 bg-accent/25"
+        />
+        <div
+          aria-hidden="true"
+          className="orb orb-b -right-20 bottom-8 h-80 w-80 bg-accent-2/20"
+        />
         <div className="relative mx-auto flex max-w-[1100px] flex-col items-center px-6 pb-28 pt-20 text-center sm:pt-28">
           <div className="rise rise-1 logo-bloom w-full max-w-[640px]">
             <Image
@@ -113,6 +122,37 @@ export default function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* research strip */}
+      <section className="relative overflow-hidden border-t border-line-soft py-24">
+        <div
+          aria-hidden="true"
+          className="orb orb-b -right-32 top-0 h-72 w-72 bg-accent/15"
+        />
+        <div className="relative">
+          <Reveal>
+            <div className="mx-auto mb-12 flex max-w-[1100px] flex-wrap items-end justify-between gap-4 px-6">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">
+                  Research
+                </p>
+                <h2 className="mt-4 text-[clamp(22px,3vw,32px)] font-semibold tracking-tight">
+                  Working systems, <span className="grad-text">not demos</span>
+                </h2>
+              </div>
+              <Link
+                href="/research"
+                className="nav-link text-sm font-medium text-accent no-underline"
+              >
+                explore all research →
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal>
+            <ResearchMarquee />
+          </Reveal>
         </div>
       </section>
 

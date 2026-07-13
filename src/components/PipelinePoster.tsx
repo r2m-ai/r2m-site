@@ -4,8 +4,9 @@ type Stage = {
 };
 
 /**
- * Brand-styled pipeline poster: numbered stages flowing left-to-right on
- * desktop, top-to-bottom on mobile, joined by gradient connectors.
+ * Brand-styled pipeline poster: fixed-width stage cards on a horizontal
+ * snap-scrolling strip, joined by gradient connectors. Cards never shrink,
+ * so long pipelines scroll instead of clipping.
  */
 export function PipelinePoster({
   title,
@@ -17,7 +18,7 @@ export function PipelinePoster({
   stages: Stage[];
 }) {
   return (
-    <figure className="card my-12 overflow-hidden p-8 sm:p-10">
+    <figure className="card my-12 p-6 sm:p-10">
       <figcaption className="mb-8 text-center">
         <p className="text-xs font-medium uppercase tracking-[0.28em] text-accent">
           How it works
@@ -28,11 +29,11 @@ export function PipelinePoster({
         ) : null}
       </figcaption>
 
-      <div className="flex flex-col items-stretch gap-0 lg:flex-row lg:items-start">
+      <div className="poster-strip">
         {stages.map((s, i) => (
-          <div key={s.label} className="flex flex-col lg:flex-1 lg:flex-row">
-            <div className="flex-1 border border-line-soft bg-white/[0.02] p-5">
-              <p className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-[13px] font-semibold uppercase tracking-[0.12em] text-transparent">
+          <div key={s.label} className="flex shrink-0 snap-start">
+            <div className="w-[248px] shrink-0 border border-line-soft bg-white/[0.02] p-5">
+              <p className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-[13px] font-semibold uppercase tracking-[0.1em] text-transparent">
                 {String(i + 1).padStart(2, "0")} — {s.label}
               </p>
               <p className="mt-2.5 text-[13.5px] leading-relaxed text-muted">
@@ -42,12 +43,16 @@ export function PipelinePoster({
             {i < stages.length - 1 ? (
               <div
                 aria-hidden="true"
-                className="mx-auto h-6 w-px bg-gradient-to-b from-accent to-accent-2 lg:mx-0 lg:mt-8 lg:h-px lg:w-6 lg:bg-gradient-to-r"
+                className="mt-8 h-px w-7 shrink-0 bg-gradient-to-r from-accent to-accent-2"
               />
             ) : null}
           </div>
         ))}
       </div>
+
+      <p className="mt-3 text-center text-[11px] uppercase tracking-[0.2em] text-muted/60">
+        scroll →
+      </p>
     </figure>
   );
 }
