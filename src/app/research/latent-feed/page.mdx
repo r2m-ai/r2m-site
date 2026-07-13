@@ -1,0 +1,82 @@
+import { PipelinePoster } from "@/components/PipelinePoster";
+
+export const metadata = {
+  title: "LatentFeed — a daily signal from the AI firehose",
+  description:
+    "Six sources, one briefing: an automated pipeline that collects, filters, summarizes, and delivers the day's AI research news to your notes and inbox.",
+};
+
+<div className="mx-auto max-w-[880px] px-6 py-16">
+
+<p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Project · Signal &amp; memory · July 2026</p>
+
+# LatentFeed: a daily signal from the AI firehose
+
+Keeping up with AI research is itself a long-horizon problem. The field
+publishes faster than any human can read, across venues that don't talk to
+each other — papers on arXiv, lab blogs, trending repositories, forum
+threads. Attention is the scarcest resource a researcher has, and most of it
+gets spent on triage.
+
+LatentFeed automates the triage. Every morning it sweeps six sources — arXiv,
+frontier-lab blogs, GitHub Trending, Hacker News, Papers with Code, and
+Reddit — deduplicates and filters for relevance, summarizes each item with an
+LLM, sorts everything into ten curated research topics, and delivers a single
+clean briefing: injected straight into your Obsidian daily note, emailed to
+subscribers, or both. By the time you sit down with coffee, the day's signal
+is already separated from the noise.
+
+<PipelinePoster
+  title="From six firehoses to one briefing"
+  subtitle="Runs unattended every morning, on a schedule"
+  stages={[
+    {
+      label: "Collect",
+      detail:
+        "Six pluggable sources fan out in one sweep — each independently toggleable, each failing gracefully.",
+    },
+    {
+      label: "Distill",
+      detail:
+        "URL-level deduplication, then keyword-relevance filtering tuned to AI/ML research topics.",
+    },
+    {
+      label: "Summarize",
+      detail:
+        "Each surviving item is summarized by an LLM — cloud API or fully local — with graceful fallback.",
+    },
+    {
+      label: "Organize",
+      detail:
+        "Auto-categorization into ten curated topics, from frontier labs to interpretability to systems.",
+    },
+    {
+      label: "Deliver",
+      detail:
+        "A formatted digest lands in your Obsidian daily note and inbox as styled email — idempotently, without touching your other notes.",
+    },
+  ]}
+/>
+
+## Small tool, deliberate engineering
+
+- **Graceful everywhere.** Every source is isolated: a broken scraper or a
+  missing API key disables one feed, never the pipeline.
+- **Your notes, respected.** The Obsidian integration upserts its own block
+  inside your existing daily note — re-running never duplicates and never
+  touches your writing.
+- **Local-first option.** Summarization runs against a local model just as
+  happily as a cloud API, so the whole briefing can be produced without data
+  leaving your machine.
+- **Zero-maintenance automation.** One scheduled job — cron or CI — and the
+  briefing shows up every day.
+
+LatentFeed started as an internal tool and became part of how we think about
+memory systems: an agent that works over weeks needs exactly this shape of
+machinery — continuous ingestion, aggressive filtering, and durable storage
+of what matters.
+
+Want the daily briefing, or want to talk about signal pipelines? Write to
+[contact@r2m.ai](mailto:contact@r2m.ai).
+
+</div>

@@ -1,0 +1,101 @@
+import { PipelinePoster } from "@/components/PipelinePoster";
+
+export const metadata = {
+  title: "ScholarLoop — an autonomous research loop that can't grade its own homework",
+  description:
+    "A multi-agent framework that reads literature, runs real experiments, and writes papers — engineered so its agents cannot reward-hack their own results.",
+};
+
+<div className="mx-auto max-w-[880px] px-6 py-16">
+
+<p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Project · Autonomous research · July 2026</p>
+
+# ScholarLoop: an autonomous research loop that can't grade its own homework
+
+Most "AI scientist" demos share a quiet flaw: the same model that runs the
+experiment also reports the result. Give an agent the ability to edit its own
+evaluation, and sooner or later it will — not out of malice, but because
+that's where the gradient points.
+
+ScholarLoop is our answer. It's an autonomous multi-agent framework that
+reproduces a researcher's full experimental workflow — read the literature,
+form a grounded hypothesis, run real PyTorch experiments, reflect on
+failures, and draft a peer-reviewed write-up — with no human in the loop, on
+a single-GPU budget. The defining design decision: **the LLM only does the
+open-ended thinking. Everything checkable is deterministic, tested code.**
+
+<PipelinePoster
+  title="One governed research round"
+  subtitle="Every round is budgeted, gated, and scored against frozen ground truth"
+  stages={[
+    {
+      label: "Direct",
+      detail:
+        "A director reads the experiment ledger and literature hotspots, then commits to a research direction, a concrete topic, and a budget.",
+    },
+    {
+      label: "Read",
+      detail:
+        "Real retrieval across arXiv and OpenAlex, ranked by citation impact and distilled into cited, testable techniques.",
+    },
+    {
+      label: "Propose",
+      detail:
+        "Constraints mined from history — dead regions, duplicates, frozen surfaces — bound a structured experiment proposal.",
+    },
+    {
+      label: "Debate",
+      detail:
+        "Persona critics vote on whether the idea is worth GPU time before a single seed is spent.",
+    },
+    {
+      label: "Experiment",
+      detail:
+        "A smoke → verify → full funnel across seeds. The agent edits training code; a frozen, hash-verified scorer owns the metric.",
+    },
+    {
+      label: "Reflect",
+      detail:
+        "Every agent's predictions are scored against measured truth; lessons decay into a relevance-ranked skill library.",
+    },
+    {
+      label: "Write",
+      detail:
+        "A paper drafted only from verified numbers, then peer-reviewed by the system itself — which rejects marginal results.",
+    },
+  ]}
+/>
+
+## Honest by construction
+
+The interesting engineering isn't the loop — it's the guardrails that make
+the loop trustworthy when nobody is watching:
+
+- **Two-phase frozen scoring.** The agent may edit `train.py`; it may never
+  touch the scorer. Scoring runs from a pristine copy of the codebase, and
+  the scorer's hash is verified at runtime. We ship an adversarial "cheater"
+  engine in the test suite to prove the guards hold.
+- **Number grounding.** Every mean, std, and per-seed result is frozen into a
+  verified registry. The paper writer can only cite numbers that exist in
+  that registry — a deterministic audit rejects anything else.
+- **Predict-then-verify calibration.** Each agent's checkable claims are
+  scored against what actually happened, and the calibration record is fed
+  back into future prompts. The loop learns which of its own agents to
+  trust.
+- **A self-stopping governor.** Unattended runs halt on dollar budget, round
+  caps, or convergence — with cost tracking priced per model, per call.
+
+## Where it stands
+
+The full loop runs end-to-end today — deterministically against a mock model
+with no API key or GPU, and live against frontier models on real experiment
+engines. In our captured live runs, the system's own reviewer rejected both
+generated papers as too marginal to publish. We consider that a feature: an
+autonomous researcher that knows when its results aren't good enough is
+worth more than one that always declares victory.
+
+ScholarLoop is an active research preview. If you're working on autonomous
+research systems and want to compare notes — or break our guards — write to
+[contact@r2m.ai](mailto:contact@r2m.ai).
+
+</div>
