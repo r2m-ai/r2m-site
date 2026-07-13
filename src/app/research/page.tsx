@@ -17,10 +17,10 @@ const posts = [
     date: "July 2026",
   },
   {
-    slug: "alpha-loop",
+    slug: "alpha-agent",
     tag: "Agents in markets",
-    title: "AlphaLoop",
-    dek: "A multi-agent trading system that fuses technical, macro, sentiment, and quantitative signals into one conviction score — then executes, verifies, and reports on itself daily.",
+    title: "AlphaAgent",
+    dek: "A multi-agent platform for markets — ML price models, academic alpha factors, options strategies, and guarded live execution, fused into one auditable decision loop.",
     date: "July 2026",
   },
   {

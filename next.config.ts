@@ -7,7 +7,12 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/research/market-loop",
-        destination: "/research/alpha-loop",
+        destination: "/research/alpha-agent",
+        permanent: true,
+      },
+      {
+        source: "/research/alpha-loop",
+        destination: "/research/alpha-agent",
         permanent: true,
       },
     ];

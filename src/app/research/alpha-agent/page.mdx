@@ -1,0 +1,117 @@
+import { PipelinePoster } from "@/components/PipelinePoster";
+
+export const metadata = {
+  title: "AlphaAgent — a multi-agent platform for markets",
+  description:
+    "From alpha discovery to guarded execution: ML price models, academic alpha factors, options strategies, and a live trading loop with auditable agent reasoning.",
+};
+
+<div className="mx-auto max-w-[880px] px-6 py-16">
+
+<p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">Project · Agents in markets · July 2026</p>
+
+# AlphaAgent: a multi-agent platform for markets
+
+Markets are the harshest long-horizon environment we know: noisy feedback,
+regime shifts, and a scoreboard that settles every day whether you like it
+or not. That's exactly why we build there.
+
+AlphaAgent is our multi-agent trading research platform, covering the full
+arc from alpha discovery to live execution. A team of specialized agents —
+data, prediction, alpha, sentiment, macro, risk, and execution — coordinate
+over an async message bus with explicit reasoning chains, so every decision
+the system makes can be traced from observation to conclusion. One side of
+the platform hunts for edge: machine-learned price models, academic alpha
+factors, and options strategies. The other side turns conviction into
+positions: a momentum portfolio executed through a brokerage API behind
+multiple safety gates, verified after every trade, and written up in a daily
+research report.
+
+<PipelinePoster
+  title="From raw ticks to verified positions"
+  subtitle="One auditable loop: discover, decide, act, verify, report"
+  stages={[
+    {
+      label: "Ingest",
+      detail:
+        "Real-time and historical market data, options chains, and news — fetched in parallel across a 150+ name universe.",
+    },
+    {
+      label: "Macro & regime",
+      detail:
+        "Market indices, 11 sectors, and 7 investment themes scored into a bull–bear regime signal, blended with an LLM macro synthesis.",
+    },
+    {
+      label: "Predict",
+      detail:
+        "An ensemble of learned price models — LSTM, Transformer, and gradient-boosted trees — each reporting calibrated confidence.",
+    },
+    {
+      label: "Score alpha",
+      detail:
+        "Academic 101-Alphas-style factors plus custom signals, evaluated by information coefficient and half-life; LLM news sentiment per ticker.",
+    },
+    {
+      label: "Fuse",
+      detail:
+        "Regime- and confidence-weighted fusion into one conviction score, with every step recorded in an explicit reasoning chain.",
+    },
+    {
+      label: "Act",
+      detail:
+        "Momentum portfolio construction and options strategies — executed through guarded brokerage orders with post-trade verification.",
+    },
+    {
+      label: "Report",
+      detail:
+        "A daily research report with macro assessment, top picks, decision log, and live portfolio performance, delivered by email.",
+    },
+  ]}
+/>
+
+## The discovery side: hunting for edge
+
+- **Learned price models.** LSTM, Transformer, and XGBoost forecasters run
+  as an ensemble, with technical indicators and alpha factors as features
+  and per-model confidence carried through to the fusion layer.
+- **Alpha factors, evaluated like a quant desk.** Implementations from the
+  academic "101 Alphas" catalog alongside custom factors — each judged by
+  information coefficient, decay half-life, and cross-correlation before it
+  earns weight in the score.
+- **Options as a first-class strategy.** Black–Scholes pricing with full
+  Greeks and an implied-volatility solver feed a strategy generator that
+  proposes spreads, straddles, and iron condors matched to the volatility
+  regime.
+
+## The execution side: built like infrastructure
+
+- **One source of truth for strategy math.** The same portfolio-construction
+  code drives backtests, daily reports, and live orders — the three can
+  never silently drift apart.
+- **Hard risk rules, not suggestions.** Per-position and per-sector caps,
+  minimum cash reserves, notional limits, pending-order and buying-power
+  guards, and post-trade verification on every execution.
+- **Honest backtesting.** Next-day execution to kill look-ahead bias,
+  transaction costs charged both ways, and per-year sweeps against both the
+  S&amp;P 500 and Nasdaq.
+- **Live, continuous evaluation.** The execution loop has traded a live
+  paper account since March 2026, up 53.8% against the S&amp;P 500's 13.5%
+  over the same period — every trade logged, performance docs generated
+  automatically from the broker API.
+
+## Why agents, and why reasoning chains
+
+The interesting problem isn't any single signal — it's coordination.
+AlphaAgent's agents communicate over an async message bus with pub/sub
+topics and request/response semantics, and every decision is recorded as an
+explicit observation → analysis → reasoning → conclusion chain. When the
+system takes a position, you can read exactly why. That auditability is the
+point: an agent acting autonomously with real consequences needs hard
+guardrails, verified execution, and a decision trail — the same properties
+every long-horizon agent will need. (AlphaAgent is a research system, not
+investment advice.)
+
+Curious about the fusion architecture, the factor library, or the guardrail
+design? Write to [research@r2m.ai](mailto:research@r2m.ai).
+
+</div>
