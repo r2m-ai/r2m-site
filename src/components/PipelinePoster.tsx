@@ -18,12 +18,12 @@ export function PipelinePoster({
   stages: Stage[];
 }) {
   return (
-    <figure className="card my-12 p-6 sm:p-10">
-      <figcaption className="mb-8 text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.28em] text-accent">
+    <figure className="card my-10 p-5 sm:p-8">
+      <figcaption className="mb-7 text-center">
+        <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">
           How it works
         </p>
-        <p className="mt-3 text-xl font-semibold tracking-tight">{title}</p>
+        <p className="mt-3 text-lg font-semibold tracking-tight">{title}</p>
         {subtitle ? (
           <p className="mt-2 text-sm text-muted">{subtitle}</p>
         ) : null}
@@ -32,7 +32,7 @@ export function PipelinePoster({
       <div className="poster-strip">
         {stages.map((s, i) => (
           <div key={s.label} className="flex shrink-0 snap-start">
-            <div className="w-[248px] shrink-0 border border-line-soft bg-white/[0.02] p-5">
+            <div className="w-[224px] shrink-0 border border-line-soft bg-white/[0.02] p-4">
               <p className="bg-gradient-to-r from-accent to-accent-2 bg-clip-text text-[13px] font-semibold uppercase tracking-[0.1em] text-transparent">
                 {String(i + 1).padStart(2, "0")} — {s.label}
               </p>
